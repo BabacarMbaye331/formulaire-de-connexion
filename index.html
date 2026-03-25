@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaire de connexion</title>
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link css -->
+    <link rel="stylesheet" href="styles/connexion.css">
+    <!-- link js -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container connexion">
+        <div class="description">
+            <span class="icon_connexion"><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+            <h1>Connexion</h1>
+            <p>Entrer les informations utilisés lors de votre dernier visite</p>
+        </div>
+        <form action="" class="form_connexion">
+            <div class="champs">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="entrer votre email">
+            </div>
+            <div class="champs">
+                <label for="mdp">Mot de pass</label>
+                <input type="password" name="mdp" id="mdp" placeholder="votre mot de pass">
+            </div>
+            <button class="btn_connexion" type="submit">Connexion</button>
+            <div class="demande_inf">
+                <p>vous n'avez pas de compte? <a href="#">s'nscrire</a></p>
+                <p>mot de pass <a href="#">oublier</a></p>
+            </div>
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
