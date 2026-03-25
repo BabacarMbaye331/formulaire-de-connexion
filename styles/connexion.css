@@ -14,7 +14,7 @@ body {
 .container.connexion {
     background-color: #fff;
     padding: 1.5rem;
-    width: 40%;
+    width: 50%;
     margin: auto;
 }
 .connexion .description {
@@ -90,6 +90,11 @@ body {
     text-decoration: none;
 }
 /* medai query */
+@media (max-width: 992px) {
+    .container.connexion {
+        width: 60%;
+    }
+}
 @media (max-width: 768px) {
     .container.connexion {
         width: 75%;
