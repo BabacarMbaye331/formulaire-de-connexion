@@ -61,6 +61,10 @@ body {
     /* font-size: 1rem; */
     padding: 8px 10px;
 }
+.user div input:focus , .champs input:focus {
+    border: 3px solid #ededed;
+    background-color: #fff;
+}
 .btn_inscription {
     border: none;
     padding: 6px 0;
@@ -69,7 +73,7 @@ body {
     transition: all .3s ease-in;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: .9rem;
     border-radius: 5px;
 }
 .btn_inscription:hover {
@@ -77,6 +81,7 @@ body {
 }
 .connexion {
     text-decoration: none;
+    float: right;
 }
 @media (max-width: 768px) {
     .container.insciption {
