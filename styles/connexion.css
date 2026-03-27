@@ -91,7 +91,23 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
-/* medai query */
+/* ***************message d'erreur */
+.errorEmail, .errorMDP {
+    font-size: 0.8rem;
+    color: red;
+}
+.chamsrequis {
+    padding: 0px;
+    display: block;
+    background-color: red;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/***************** medai query */
 @media (max-width: 992px) {
     .container.connexion {
         width: 60%;
