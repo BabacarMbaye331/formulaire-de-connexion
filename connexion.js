@@ -52,6 +52,7 @@ function MDPValide(mdp) {
         return true;
     } else {
         errorMDP.textContent = "Le mot de passe doit commencer par une pajuscule, et est au moins 8 caractéres !";
+        chamsrequis.style = "background-color: white";
         return false;
     }
 }
