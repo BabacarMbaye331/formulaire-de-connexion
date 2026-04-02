@@ -83,6 +83,12 @@ body {
     text-decoration: none;
     float: right;
 }
+
+/* gestion des messages d'erreurs */
+.errorConfMDP, .errorMDP, .errorEmail, .errorDateNaiss, .errorPrenom, .errorNom, .errorValidDonnees {
+    font-size: 0.9rem;
+    color: red;
+}
 @media (max-width: 768px) {
     .container.insciption {
         width: 60%;
