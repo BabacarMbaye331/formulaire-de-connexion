@@ -26,9 +26,11 @@ function EmailValide(email) {
 const chamsrequis = document.querySelector(".chamsrequis");
 
 // verifie si le champs email est remplis
+
 function verfiechampsEmail(email) {
-    if(email.value.trim() !== "") {
-        chamsrequis.textContent="";
+    const valueEmail = email.value;
+    if (valueEmail !== "") {
+        chamsrequis.textContent = "";
         return EmailValide(email);
     } else {
         chamsrequis.textContent = "Tous les champs sont requis !";
@@ -45,7 +47,7 @@ function verfiechampsEmail(email) {
 function MDPValide(mdp) {
     // recupèration de errorMDP
     const errorMDP = document.querySelector(".errorMDP");
-    
+
     const verifieMDP = new RegExp("^[A-Z]+[^\s@]+$");
     if (verifieMDP.test(mdp.value)) {
         errorMDP.textContent = "";
@@ -60,11 +62,11 @@ function MDPValide(mdp) {
 function verifieChampsMDP(mdp) {
     if (mdp.value.trim() !== "") {
         // invocation de la foction MDPValide
-        chamsrequis.textContent="";
+        chamsrequis.textContent = "";
         return MDPValide(mdp);
     } else {
         chamsrequis.textContent = "Tous les champs sont requis !";
-        chamsrequis.style = "padding: 5px 10px";
+        chamsrequis.style.padding = "5px 10px";
     }
 }
 
@@ -72,6 +74,8 @@ function verifieChampsMDP(mdp) {
 function redirectionPage(email, mdp, lien) {
     if (verfiechampsEmail(email) && verifieChampsMDP(mdp)) {
         window.location.href = lien;
+    } else {
+        console.log("erreur de connexion")
     }
 }
 
@@ -79,14 +83,11 @@ function redirectionPage(email, mdp, lien) {
 form_connexion.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // récupèration du email
+    // récupèration des champs
     const email = document.querySelector("#email");
-    verfiechampsEmail(email);
-
-    // récupèration du mot de passe
     const mdp = document.querySelector("#mdp");
-    verifieChampsMDP(mdp);
+
 
     // redirectionPage
-    redirectionPage(email, mdp, "accueil.html");
+    redirectionPage(email, mdp, "../pages/accueil.html");
 })
