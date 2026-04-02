@@ -1,0 +1,18 @@
+[
+    {
+        "id_user" : 1,
+        "nom" : "Mbaye",
+        "prenom" : "Babacar",
+        "email" : "mbaye@gmail.com",
+        "mdp" : "Mbaye221@",
+        "conf_mdp" : "Mbaye221@"
+    },
+    {
+        "id_user" : 2,
+        "nom" : "sow",
+        "prenom" : "ibrahima",
+        "email" : "sow@gmail.com",
+        "mdp" : "Sow0221@",
+        "conf_mdp" : "Sow0221@"
+     }
+]
