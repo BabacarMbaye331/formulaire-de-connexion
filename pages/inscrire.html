@@ -12,7 +12,7 @@
     <!-- link css -->
     <link rel="stylesheet" href="../styles/inscrire.css">
     <!-- lienk js -->
-    <script src="js/inscription.js" defer></script>
+    <script src="../js/inscription.js" defer></script>
 </head>
 
 <body>
@@ -27,29 +27,36 @@
                 <div class="champs_nom">
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" placeholder="nom">
+                    <p class="errorNom"></p>
                 </div>
                 <div class="champs_prenom">
                     <label for="prenom">Prenom</label>
                     <input type="text" name="prenom" id="prenom" placeholder="prenom">
+                    <p class="errorPrenom"></p>
                 </div>
             </div>
             <div class="champs">
                 <label for="dateNaissance">Date de nassance</label>
                 <input type="date" name="dateNaissance" id="dateNaissance">
+                <p class="errorDateNaiss"></p>
             </div>
             <div class="champs">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="email">
+                <p class="errorEmail"></p>
             </div>
             <div class="champs">
                 <label for="mdp">Mot de pass</label>
                 <input type="password" name="mdp" id="mdp" placeholder="mot de passe">
+                <p class="errorMDP"></p>
             </div>
             <div class="champs">
                 <label for="conf_mdp">Confirmer mot de pass</label>
                 <input type="password" name="conf_mdp" id="conf_mdp" placeholder="confirmer mot de passe">
+                <p class="errorConfMDP"></p>
             </div>
             <div class="champs_confirmer">
+                <p class="errorValidDonnees"></p>
                 <input type="radio" name="check_confirme" id="check_confirme">
                 <label for="check_confirme">confirmer tous les informations !</label>
             </div>
