@@ -1,4 +1,48 @@
 const form_connexion = document.querySelector(".form_connexion");
+// recuperation des messages d'erreurs
+const chamsrequis = document.querySelector(".chamsrequis");
+const errorMDP = document.querySelector(".errorMDP");
+const errorEmail = document.querySelector(".errorEmail");
+
+fetch("../http-api/users.json")
+    .then(user => user.json())
+    .then(data =>  {
+        // console.log(data)
+
+        // enregistrement des donnees dans le localStorage
+        window.localStorage.setItem("users", JSON.stringify(data))
+    })
+    .catch(e =>  console.error("erreur avec ", e))
+    
+
+// recuperation des donnees au niveau du localStorage
+const users = JSON.parse(localStorage.getItem("users"));
+
+// connexion de l' API pour l'authentification des users
+async function donneesEregistrer(emailUser, mdpUser) {
+
+    for (const user of users) {
+        if (emailUser.value === user.email && mdpUser.value === user.mdp) {
+
+            // recuperation des donnees de l'utilisateur
+            let donneesUsers = {
+                id : user.id_user,
+                prenom : user.prenom,
+                nom : user.nom,
+                email : user.email,
+                mdp : user.mdp
+            }
+
+            // Stocker dans localStorage pour persister après redirection
+            localStorage.setItem("currentUser", JSON.stringify(donneesUsers));
+
+            redirectionPage(emailUser, mdpUser, "../pages/accueil.html");
+        } else {
+            console.log("veillez vous inscrire !");
+        }
+    }
+}
+
 
 /**
  * 
@@ -6,8 +50,6 @@ const form_connexion = document.querySelector(".form_connexion");
  * @returns {string} verieEmail validation du email
  */
 function EmailValide(email) {
-    // recuperation errorEmail
-    const errorEmail = document.querySelector(".errorEmail");
 
     // expression reguliere
     const verieEmail = new RegExp("^[^\s@]+@[^\s@]+\\.[^\s@]+$");
@@ -22,8 +64,6 @@ function EmailValide(email) {
     }
 }
 
-// recupération de chamsrequis
-const chamsrequis = document.querySelector(".chamsrequis");
 
 // verifie si le champs email est remplis
 
@@ -45,10 +85,7 @@ function verfiechampsEmail(email) {
  */
 
 function MDPValide(mdp) {
-    // recupèration de errorMDP
-    const errorMDP = document.querySelector(".errorMDP");
-
-    const verifieMDP = new RegExp("^[A-Z]+[^\s@]+$");
+    const verifieMDP = new RegExp("^[A-Z]+[A-Za-z0-9-_./&@]+$");
     if (verifieMDP.test(mdp.value)) {
         errorMDP.textContent = "";
         return true;
@@ -88,6 +125,8 @@ form_connexion.addEventListener('submit', function (event) {
     const mdp = document.querySelector("#mdp");
 
 
+
     // redirectionPage
-    redirectionPage(email, mdp, "../pages/accueil.html");
+    // redirectionPage(email, mdp, "../pages/accueil.html");
+    donneesEregistrer(email, mdp)
 })
