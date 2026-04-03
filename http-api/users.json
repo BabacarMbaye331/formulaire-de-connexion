@@ -3,8 +3,8 @@
         "id_user" : 1,
         "nom" : "Mbaye",
         "prenom" : "Babacar",
-        "email" : "mbaye@gmail.com",
-        "mdp" : "Mbaye221@",
+        "email" : "test@gmail.com",
+        "mdp" : "Test221@",
         "conf_mdp" : "Mbaye221@"
     },
     {
